@@ -17,7 +17,7 @@
     </mat-form-field>
     <button (click)="onSubmit()" [disabled]="!loginForm.valid" mat-raised-button class="form__button" color="primary">Войти</button>
     <div class="form__bottom">
-      Нет аккаунта? <a href="/auth/register">Регистрация</a>
+      Нет аккаунта? <a routerLink="/auth/register">Регистрация</a>
     </div>
   </form>
 </div>

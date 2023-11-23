@@ -11,7 +11,6 @@ export class HeaderComponent {
     public user: IUser = this._userService.getCurrentUser();
 
     constructor(private _userService: UserService) {
-
     }
 
 }

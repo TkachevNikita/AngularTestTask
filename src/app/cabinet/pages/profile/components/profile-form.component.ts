@@ -27,14 +27,14 @@ export class ProfileFormComponent {
               Validators.required,
               Validators.minLength(2),
               Validators.maxLength(255),
-              Validators.pattern(/^[a-zA-Z]+$/)
+              Validators.pattern(/[а-яА-Яa-zA-Z]+/)
             ]),
             userSurname: new FormControl({value: this.currentUser.surname, disabled: !this.isChange},
             [
               Validators.required,
               Validators.minLength(2),
               Validators.maxLength(255),
-              Validators.pattern(/^[a-zA-Z]+$/)
+              Validators.pattern(/[а-яА-Яa-zA-Z]+/)
             ]),
             userPhone: new FormControl({value: this.currentUser.phone, disabled: !this.isChange},
             [
