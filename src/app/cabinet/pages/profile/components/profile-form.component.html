@@ -1,0 +1,32 @@
+<form [formGroup]="profileForm">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input disabled value="{{currentUser.email}}" type="text" matInput>
+  </mat-form-field>
+    <div class="form__group">
+      <mat-form-field>
+        <mat-label>Имя</mat-label>
+        <input [formControlName]="'userName'" type="text" matInput>
+        <mat-error>{{ getErrorMessage(profileForm.get('userName')!, 'name') }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Фамилия</mat-label>
+        <input formControlName="userSurname" type="text" matInput>
+        <mat-error>{{ getErrorMessage(profileForm.get('userSurname')!, 'name') }}</mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>Номер телефона</mat-label>
+      <input [(ngModel)]="phoneNumber" (blur)="onPhoneNumberBlur()" formControlName="userPhone" type="text" matInput>
+      <mat-error>{{ getErrorMessage(profileForm.get('userPhone')!, 'phone') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Web URL</mat-label>
+      <input formControlName="userWebUrl" type="text" matInput>
+      <mat-error>{{ getErrorMessage(profileForm.get('userWebUrl')!, 'webUrl') }}</mat-error>
+    </mat-form-field>
+    <div class="buttons">
+      <button (click)="onSubmit()" [disabled]="!profileForm.valid" mat-raised-button color="primary">Сохранить</button>
+      <button (click)="handleChange($event)" mat-stroked-button color="primary">Изменить</button>
+    </div>
+</form>

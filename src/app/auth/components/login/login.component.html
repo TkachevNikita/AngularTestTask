@@ -1,0 +1,23 @@
+<div class="form">
+  <h2 class="form__title">Авторизация</h2>
+  <form [formGroup]="loginForm">
+    <mat-form-field>
+      <mat-label>Введите email</mat-label>
+      <input formControlName="userEmail" matInput>
+      <mat-error *ngIf="loginForm.get('userEmail')!.invalid">
+        {{ getEmailErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Введите пароль</mat-label>
+      <input type="password" formControlName="userPassword" matInput>
+      <mat-error *ngIf="loginForm.get('userPassword')!.invalid">
+        {{ getPasswordErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
+    <button (click)="onSubmit()" [disabled]="!loginForm.valid" mat-raised-button class="form__button" color="primary">Войти</button>
+    <div class="form__bottom">
+      Нет аккаунта? <a href="/auth/register">Регистрация</a>
+    </div>
+  </form>
+</div>

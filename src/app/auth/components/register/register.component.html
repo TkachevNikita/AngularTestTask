@@ -1,0 +1,37 @@
+<div class="form">
+  <h2 class="form__title">Регистрация</h2>
+  <form [formGroup]="registerForm">
+    <div class="form__group">
+      <mat-form-field>
+        <mat-label>Введите имя</mat-label>
+        <input formControlName="userName" required matInput>
+        <mat-error>{{ getErrorMessage(registerForm.get('userName')!, 'name') }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Введите фамилию</mat-label>
+        <input formControlName="userSurname" required matInput>
+        <mat-error>{{ getErrorMessage(registerForm.get('userSurname')!, 'name') }}</mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>Введите телефон</mat-label>
+      <input [(ngModel)]="phoneNumber" (blur)="onPhoneNumberBlur()" formControlName="userPhone" type="text" matInput>
+      <mat-error>{{ getErrorMessage(registerForm.get('userPhone')!, 'phone') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Введите email</mat-label>
+      <input formControlName="userEmail" type="email" required matInput>
+      <mat-error>{{ getErrorMessage(registerForm.get('userEmail')!, 'email') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Введите пароль</mat-label>
+      <input type="password" formControlName="userPassword" required matInput>
+      <mat-error>{{ getErrorMessage(registerForm.get('userPassword')!, 'password') }}</mat-error>
+    </mat-form-field>
+    <button (click)="onSubmit()" [disabled]="registerForm.invalid" mat-raised-button class="form__button" color="primary">Зарегистрироваться</button>
+    <div class="form__bottom">
+      Уже есть аккаунт? <a routerLink="/auth/login">Войти</a>
+    </div>
+  </form>
+</div>
+

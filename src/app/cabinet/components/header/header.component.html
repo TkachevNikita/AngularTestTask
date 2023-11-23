@@ -1,0 +1,8 @@
+<header>
+  ZenTotem
+  <button class="menu" mat-button [matMenuTriggerFor]="menu">{{user.name}} {{user.surname}}</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="profile">Profile</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+</header>

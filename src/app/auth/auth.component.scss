@@ -1,0 +1,48 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.auth {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  gap: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__title {
+  align-self: center;
+  font-size: 28px;
+  color: #435261;
+  border-bottom: 3px solid #8676b6;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+
+.form__button {
+  padding: 25px;
+}
+
+.form__bottom {
+  margin-top: 10px;
+  align-self: center;
+}
+
+.form__inline {
+  display: flex;
+  gap: 10px;
+}
+
+.form__group {
+  display: flex;
+  gap: 10px;
+}
